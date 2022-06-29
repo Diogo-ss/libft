@@ -10,6 +10,16 @@
 /*                                                                                       */
 /* ************************************************************************************* */
 
-/* Lib project                                                                           */
+#ifndef LIBFT_H
+# define LIBFT_H
 
-#include "ft_memset.c"
+/* Headers ***************************************************************************** */
+
+//# include <unistd.h>
+//# include <stdlib.h>
+
+/* Library Prototype ******************************************************************* */
+
+void    ft_memset(char *string, char character, unsigned int size);
+
+#endif
