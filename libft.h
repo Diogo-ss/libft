@@ -21,5 +21,6 @@
 /* Library Prototype ******************************************************************* */
 
 void    ft_memset(char *string, char character, unsigned int size);
+void    ft_bzero(char *string, unsigned int size);
 
 #endif
