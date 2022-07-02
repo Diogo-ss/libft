@@ -14,7 +14,7 @@ NAME 		= libft.a
 HEADER 		= libft.h
 CC 			= cc
 CFLAGS 		= -Wall -Werror -Wextra
-SRC 		:= ft_memset.c ft_bzero.c ft_memcpy.c
+SRC 		:= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c
 
 OBJS 		:= $(SRC:.c=.o)
 
