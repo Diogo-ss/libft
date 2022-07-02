@@ -19,8 +19,7 @@ void    *ft_memcpy(char *strc, char *str, unsigned int size)
     count = 0;
     while (count < size) 
     {
-        *(strc++) = *(str++);
-
+        strc[count] = str[count];
         count++;
     }
     return strc;
