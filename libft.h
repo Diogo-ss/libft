@@ -24,5 +24,6 @@ void    ft_memset(char *string, char character, unsigned int size);
 void    ft_bzero(char *string, unsigned int size);
 void    *ft_memcpy(char *strc, char *str, unsigned int size);
 char    *ft_memccpy(char *strcpy, char *str, char character, size_t size);
-char    *ft_memmove(char *dst, const char *src, size_t len);
+char    *ft_memmove(char *dest, char *src, size_t len);
+
 #endif
