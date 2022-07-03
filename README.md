@@ -6,4 +6,4 @@
 `ft_bzero` 1.OK 2.OK 3.OK <p>
 `ft_memcpy` 1.OK 2.OK <p>
 `ft_memccpy` 1.✗ 2.✗ 3.✗ 4.✗ <p>
-`ft_memmove` 1.OK 2.✗ 3.✗ 4.OK 5.OK <p>
+`ft_memmove` 1.OK 2.OK 3.OK 4.OK <p>
