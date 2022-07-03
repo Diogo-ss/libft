@@ -20,7 +20,7 @@
 
 /* Library Prototype ******************************************************************* */
 
-void    ft_memset(char *string, char character, unsigned int size);
+void    ft_memset(char *dest, char val, size_t size);
 void    ft_bzero(char *string, unsigned int size);
 void    *ft_memcpy(char *strc, char *str, unsigned int size);
 char    *ft_memccpy(char *strcpy, char *str, char character, size_t size);
