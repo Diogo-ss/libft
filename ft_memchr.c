@@ -12,35 +12,19 @@
 
 #include "libft.h"
 
-void *ft_memchr(const void *s, int c, size_t n)
-{  
-    char val = 'l';
-    size_t i;
-
+void    *ft_memchr(const void *s, int c, size_t n)
+{
     char *src;
+    char val;
 
-    src = (char *) malloc(n * sizeof(char));
-    
-    ft_memcpy(src, (char *)s, (unsigned int)n);
-
-//     printf("%s", src);
-    
+    src = (char *) s;
     val = (char) c;
-    
-    i = 0;
-    while (i < n)
-    {
-//         printf("%c", src[i]); 
-        if(src[0] == val)
-        {
-//             printf("okk");
-            return ((void *)s+i);
-        }
-        
+
+    while (n--) {
+        if(*src == val)
+            return (void *) src;
         src++;
-        i++;
     }
 
     return NULL;
 }
-//memchr(const void *, int, unsigned long);
