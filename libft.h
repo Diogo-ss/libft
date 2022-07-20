@@ -20,11 +20,11 @@
 
 /* Library Prototype ******************************************************************* */
 
-void    ft_memset(char *dest, char val, size_t size);
-void    ft_bzero(char *string, unsigned int size);
-void    *ft_memcpy(char *strc, char *str, unsigned int size);
-void    *ft_memccpy(void *dest, const void *src, int c, size_t n);
-char    *ft_memmove(char *dest, char *src, size_t len);
-void    *ft_memchr(const void *s, int c, size_t n);
+void	*ft_memset(void *dest, int val, size_t len);
+void	ft_bzero(char *string, unsigned int size);
+void	*ft_memcpy(char *strc, char *str, unsigned int size);
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
+char	*ft_memmove(char *dest, char *src, size_t len);
+void	*ft_memchr(const void *s, int c, size_t n);
 
 #endif
