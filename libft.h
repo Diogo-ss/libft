@@ -15,8 +15,8 @@
 
 /* Headers ***************************************************************************** */
 
+#include <stddef.h>
 # include <unistd.h>
-# include <stdlib.h>
 
 /* Library Prototype ******************************************************************* */
 
@@ -28,4 +28,7 @@ char	*ft_memmove(char *dest, char *src, size_t len);
 void	*ft_memchr(const void *s, int c, size_t n);
 int	ft_memcmp(const void *str1, const void *str2, size_t len);
 int	ft_strlen(const char *str);
+char	*ft_strlcpy(char *dest, const char *src);
+size_t	*ft_strlcat(char *dst, const char *src, size_t size);
+
 #endif
