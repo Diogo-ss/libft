@@ -19,9 +19,9 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	char	*dest_l;
 	char	*src_l;
 
-	val = (char) c;
-	dest_l = (char *) dest;
-	src_l = (char *) src;
+	val = (char)c;
+	dest_l = (char *)dest;
+	src_l = (char *)src;
 	if (!(dest || src))
 		return (NULL);
 	i = 0;
