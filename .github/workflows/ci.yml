@@ -1,0 +1,55 @@
+name: ci
+
+on:
+  push:
+    paths:
+      - '**.c'
+      - '**.h'
+      - '**/Makefile'
+    branches:
+      - main
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    outputs:
+      changed_files: ${{ steps.commit.outputs.changed_files }}
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip3 install c-formatter-42==0.2.1
+          pip3 install norminette==3.3.51
+
+      - name: Format C files
+        run: |
+          files=$(find . -name '*.c' -o -name '*.h')
+          for file in $files; do
+            python3 -m c_formatter_42 < "$file" > "$file.tmp" && mv "$file.tmp" "$file"
+            if ! norminette "$file"; then
+              echo "norminette failed: $file"
+              exit 1
+            fi
+          done
+
+      - name: Commit files
+        id: commit
+        run: |
+          if [[ $(git status --porcelain) ]]; then
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git config user.name "github-actions[bot]"
+            git add .
+            git commit -m "style: format and lint C code [action]"
+            git remote set-url origin "https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY"
+            git push origin HEAD:${GITHUB_REF}
+          else
+            echo "No changes to commit."
+          fi
